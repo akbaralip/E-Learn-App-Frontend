@@ -4,8 +4,8 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Typography,
-} from "@material-ui/core";
+  Typography
+} from "@mui/material";
 import React from "react";
 import { baseUrl } from "../../Redux/Store/baseUrl/BaseUrl";
 
