@@ -45,7 +45,7 @@ function Navbar() {
               <div className="flex-shrink-0">
                 <img
                   className="h-12 w-12"
-                  src='/assets/Icon.png'
+                  src="/src/assets/Icon.png"
                   alt="Brand Icon"
                 />
               </div>
