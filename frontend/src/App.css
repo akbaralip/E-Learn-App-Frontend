@@ -1,0 +1,11 @@
+body{
+    font-family: 'Inter', sans-serif;
+    
+}
+
+header{
+    z-index: 10001 !important;
+}
+
+
+
