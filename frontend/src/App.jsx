@@ -19,7 +19,7 @@ import ForgetChangePassword from './pages/ForgetChangePassword/ForgetChangePassw
 import RoleDirector from './Protected/RoleDirector';
 import Lottie from 'lottie-react';
 import loadinglottie from '../src/components/Animations/Loading.json'
-import StudentsList from './Admin/AdminComponents/studentsList';
+import StudentsList from './Admin/AdminComponents/StudentsList.jsx';
 import ChefsLists from './Admin/AdminComponents/ChefsLists';
 import ChefHome from './Chef/ChefHome';
 import AddCourse from '../src/Chef/components/AddCourse'
