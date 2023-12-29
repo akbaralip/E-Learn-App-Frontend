@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 import Lottie from 'lottie-react';
 import loadinglottie from '../../components/Animations/Loading.json'
 import Navbar from '../../components/Navbar';
-import registerPic from "../../assets/login_pic.png"
+import registerPic from "../../assets/login_pic.jpg"
 
 function Register() {
   const [phoneError, setPhoneError] = useState('');
