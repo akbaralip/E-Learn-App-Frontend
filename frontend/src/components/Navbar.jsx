@@ -7,7 +7,7 @@ import { remove } from '../Redux/Reducer/Reducer';
 import { Toaster } from 'react-hot-toast';
 import { Avatar } from "@material-tailwind/react";
 import { baseUrl } from "../Redux/Store/baseUrl/BaseUrl";
-
+import iconPng from "../assets/Icon.png"
 function Navbar() {
   const token = localStorage.getItem('access_token')
   const role = localStorage.getItem('role')
@@ -45,7 +45,7 @@ function Navbar() {
               <div className="flex-shrink-0">
                 <img
                   className="h-12 w-12"
-                  src="/src/assets/Icon.png"
+                  src={iconPng}
                   alt="Brand Icon"
                 />
               </div>
