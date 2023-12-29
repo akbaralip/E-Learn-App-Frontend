@@ -8,7 +8,7 @@ import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import Modal from '../../components/Modal';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
-
+import loginPic from "../../assets/register_pic.jpg"
 
 function Login() {
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ function Login() {
       <div className="relative ">
         <Toaster />
         <img
-          src="src/assets/register_pic.jpg"
+          src={loginPic}
           className="absolute inset-0 object-cover w-full h-full"
           alt=""
         />

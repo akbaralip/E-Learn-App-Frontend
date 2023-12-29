@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import Lottie from 'lottie-react';
 import loadinglottie from '../../components/Animations/Loading.json'
 import Navbar from '../../components/Navbar';
+import registerPic from "../../assets/login_pic.png"
 
 function Register() {
   const [phoneError, setPhoneError] = useState('');
@@ -134,7 +135,7 @@ function Register() {
         ) : (
           <>
             <img
-              src="src/assets/login_pic.jpg"
+              src={registerPic}
               className="absolute inset-0 object-cover w-full h-full"
               alt=""
             />
