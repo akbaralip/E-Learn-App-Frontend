@@ -112,7 +112,7 @@ function Home() {
         </div>
       </div>
 
-      <div className='w-full bg-white py-16'>
+      <div className='w-full bg-white py-16 px-6'>
         <div className='md:max-w-[1080px] m-auto grid md:grid-cols-2 max-w-[350px]'>
           <div className='flex flex-col justify-center   '>
             <h1 className='text-3xl py-2 font-semibold '>Our <span className='text-[#20B486]'>Achievements</span></h1>
