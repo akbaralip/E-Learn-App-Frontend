@@ -7,6 +7,10 @@ import 'animate.css';
 import axiosInstance from '../../../src/AxiosInstance/AxiosIntercepter.jsx';
 import ChefListCard from './ChefListCard.jsx';
 import Navbar from '../../components/Navbar.jsx';
+import { BiSolidInstitution } from 'react-icons/bi'
+import { FaGlobeAsia, FaUserGraduate } from 'react-icons/fa'
+import { PiBookFill } from 'react-icons/pi'
+import chefImage from "../../assets/achievment.jpg"
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -65,9 +69,9 @@ function Home() {
   return (
     <main>
       <Navbar />
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div className="w-full bg-white">
-          <div className="md:max-w-[1380px] m-auto grid md:grid-cols-2 max-w-[350px]">
+      <div className="max-w-7xl mx-auto mb-8 sm:px-6 lg:px-8">
+        <div className="w-full bg-white ">
+          <div className="md:max-w-[1380px] m-auto grid md:grid-cols-2 max-w-[350px] gap-16">
             <div className="flex flex-col justify-center gap-4 md:mr-8 animate__animated animate__bounce">
               <p className="md:text-2xl md:py-2 text-[#20B486] font-medium">EXPAND YOUR SKILLS</p>
               <h1 className="md:text-6xl md:py-2 font-semibold ">
@@ -89,18 +93,17 @@ function Home() {
                 </button>
               </form>
             </div>
-
-            <div className="flex " style={{ height: '500px' }}>
+            <div className="md:order-last order-first flex" style={{ height: '500px' }}>
               {View}
             </div>
           </div>
-
           <div className=' flex max-lg justify-center items-center font-bold text-lg border-t-2  border-t-slate-200 my-4 pt-7'></div>
         </div>
       </div>
 
-      <div className='flex justify-center'>
-        <h1 className="text-2xl font-bold mb-6 text-slate-400">Its Our Trending Categories</h1>
+
+      <div className='flex justify-center mb-8'>
+        <h1 className="md:text-2xl md:py-2  font-medium">Its Our Trending<span className="md:text-6xl md:py-2 font-semibold text-[#20B486] "> Categories</span> </h1>
       </div>
 
       <div className="px-4 py-6 sm:px-0 ">
@@ -109,20 +112,84 @@ function Home() {
         </div>
       </div>
 
-      <div className="px-4 py-6 sm:px-0 ">
-        <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 p-4">
+      <div className='w-full bg-white py-16'>
+        <div className='md:max-w-[1080px] m-auto grid md:grid-cols-2 max-w-[350px]'>
+          <div className='flex flex-col justify-center   '>
+            <h1 className='text-3xl py-2 font-semibold '>Our <span className='text-[#20B486]'>Achievements</span></h1>
+            <p className='text-gray-500 py-2'>Choose Us for a World of Knowledge and Endless Opportunities in Your Cooking Journey.</p>
+            <div className='grid grid-cols-2 py-16'>
+              <div className=' py-6 flex'>
+                <div className='p-4  rounded-xl bg-[#E9F8F3]'>
+                  <FaGlobeAsia
+                    size={30}
+                    style={{ color: '#1A906B' }}
+                  />
+                </div>
+                <div className='px-3'>
+                  <h1 className='text-2xl font-bold'>10+</h1>
+                  <p className='text-[#6D737A]'>Countries</p>
+                </div>
+              </div>
+              <div className=' py-6 flex'>
+                <div className='p-4  rounded-xl bg-[#FFFAF5]'>
+                  <BiSolidInstitution
+                    size={30}
+                    style={{ color: '#FFC27A' }}
+                  />
+                </div>
+                <div className='px-3'>
+                  <h1 className='text-2xl font-bold'>100+</h1>
+                  <p className='text-[#6D737A]'>Chefs</p>
+                </div>
+              </div>
+              <div className=' py-6 flex'>
+                <div className='p-4  rounded-xl bg-[#FFEEF0]'>
+                  <PiBookFill
+                    size={30}
+                    style={{ color: '#ED4459' }}
+                  />
+                </div>
+                <div className='px-3'>
+                  <h1 className='text-2xl font-bold'>100+</h1>
+                  <p className='text-[#6D737A]'>Courses</p>
+                </div>
+              </div>
+              <div className=' py-6 flex'>
+                <div className='p-4  rounded-xl bg-[#F0F7FF]'>
+                  <FaUserGraduate
+                    size={30}
+                    style={{ color: '#0075FD' }}
+                  />
+                </div>
+                <div className='px-3'>
+                  <h1 className='text-2xl font-bold'>1000+</h1>
+                  <p className='text-[#6D737A]'>Students</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <img className=' m-auto md:order-last order-first rounded' alt="" src="https://www.heraldtribune.com/gcdn/authoring/2019/06/26/NSHT/ghows-LK-8c18d1ea-2228-1fe7-e053-0100007f4e92-7ed4c5c4.jpeg?width=660&height=440&fit=crop&format=pjpg&auto=webp" />
 
 
-          <div className="my-8 w-full h-[130px] bg-gray-200 overflow-hidden  border  bg-gradient-to-r from-green-400 to-yellow-300 bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat p-8 shadow-2xl hover:bg-[position:200%_0,0_0] hover:duration-[1500ms]">
+        </div>
+      </div>
+
+      <div className="">
+        <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ">
+
+
+          <div className=" w-full overflow-hidden  bg-gradient-to-r from-green-400 to-yellow-300 bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat p-8  hover:bg-[position:200%_0,0_0] hover:duration-[1500ms]">
 
             <div className='text-center my-8 text-4xl font-bold  mt-[-1px]'>
-              <h1 className="font-bold mb-6 text-slate-500">Meet Our Most Famous Chefs</h1>
+              <h1 className="font-bold mb-6 text-slate-500">Meet Our Most Famous <span className="md:text-6xl md:py-2 font-semibold text-[#20B486] ">Chefs</span> </h1>
             </div>
           </div>
 
 
         </div>
       </div>
+
       <div className="px-4 py-6 sm:px-0 ">
         <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           <ChefListCard chefs={chefs} />
@@ -131,7 +198,7 @@ function Home() {
 
       <div className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6 py-8">Meet our Leadership</h2>
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-6 py-8">Meet our <span className="md:text-6xl md:py-2 font-semibold text-[#20B486] ">Leadership</span> </h2>
 
           <div className="grid gap-12 sm:grid-cols-2 xl:grid-cols-3">
 
