@@ -69,10 +69,10 @@ function Home() {
   return (
     <main>
       <Navbar />
-      <div className="max-w-7xl mx-auto mb-8 sm:px-6 lg:px-8">
+      <div className=" max-w-7xl mx-auto mb-8 sm:px-6 lg:px-8">
         <div className="w-full bg-white ">
           <div className="md:max-w-[1380px] m-auto grid md:grid-cols-2 max-w-[350px] gap-16">
-            <div className="flex flex-col justify-center gap-4 md:mr-8 animate__animated animate__bounce">
+            <div className="flex flex-col justify-center gap-4 md:mr-8 animate__animated animate__bounce px-2 py-4">
               <p className="md:text-2xl md:py-2 text-[#20B486] font-medium">EXPAND YOUR SKILLS</p>
               <h1 className="md:text-6xl md:py-2 font-semibold ">
                 Access to <span className="text-[#20B486]">500+</span> courses from{' '}
