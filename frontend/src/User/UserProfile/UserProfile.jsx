@@ -318,9 +318,10 @@ function UserProfile() {
 
                                 ) : (
                                     <img
-                                        src='src/assets/img1.png'
+                                        src='https://cdn4.iconfinder.com/data/icons/seo-web-blue-1/100/seo__web_blue_1_46-1024.png'
                                         alt="Profile"
                                         className="w-48 h-48 mx-auto rounded-full shadow-2xl object-cover"
+                                        onClick={handlePenIconClick}
                                     />
 
 
