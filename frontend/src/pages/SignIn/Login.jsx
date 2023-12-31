@@ -77,13 +77,13 @@ function Login() {
             <div className="flex flex-col items-center justify-between xl:flex-row">
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-                  The quick, brown fox <br className="hidden md:block" />
-                  jumps over a lazy dog
+                  The Best, Study for <br className="hidden md:block" />
+                  jumps over a bright future
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudan, totam rem aperiam, eaque ipsa
-                  quae.
+                You can now register your chef charisma into your account.
+                Sign up, add your course to your collection and enjoy the full chef charisma Experience.
+                
                 </p>
                 <a
                   href="/"

@@ -11,6 +11,8 @@ import { BiSolidInstitution } from 'react-icons/bi'
 import { FaGlobeAsia, FaUserGraduate } from 'react-icons/fa'
 import { PiBookFill } from 'react-icons/pi'
 import chefImage from "../../assets/achievment.jpg"
+import { Link } from 'react-router-dom';
+
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -69,12 +71,12 @@ function Home() {
   return (
     <main>
       <Navbar />
-      <div className=" max-w-7xl mx-auto mb-8 sm:px-6 lg:px-8">
-        <div className="w-full bg-white ">
+      <div className="max-w-7xl mx-auto mb-8 sm:px-6 lg:px-8">
+        <div className="w-full bg-white">
           <div className="md:max-w-[1380px] m-auto grid md:grid-cols-2 max-w-[350px] gap-16">
             <div className="flex flex-col justify-center gap-4 md:mr-8 animate__animated animate__bounce px-2 py-4">
               <p className="md:text-2xl md:py-2 text-[#20B486] font-medium">EXPAND YOUR SKILLS</p>
-              <h1 className="md:text-6xl md:py-2 font-semibold ">
+              <h1 className="md:text-6xl md:py-2 font-semibold">
                 Access to <span className="text-[#20B486]">500+</span> courses from{' '}
                 <span className="text-[#20B486]">100+</span> International{' '}
                 <span className="text-[#20B486]">CHEFS </span>
@@ -97,9 +99,41 @@ function Home() {
               {View}
             </div>
           </div>
-          <div className=' flex max-lg justify-center items-center font-bold text-lg border-t-2  border-t-slate-200 my-4 pt-7'></div>
+          <div className="flex max-lg justify-center items-center font-bold text-lg border-t-2  border-t-slate-200 my-4 pt-7"></div>
         </div>
+
+        <div className='w-full bg-white py-16 px-6'>
+          <div className='md:max-w-[1080px] m-auto grid md:grid-cols-2 max-w-[350px]'>
+
+            <div className='flex flex-col justify-center   '>
+
+              <h1 className='text-3xl py-2 font-semibold mb-4'>REGISTER MY  <span className='text-[#20B486]'>Chef Charisma </span></h1>
+              <div class="text-media__description">You can now register your chef charisma into your account.
+                Sign up, add your course to your collection and enjoy the full chef charisma Experience.
+                Want to personalize your watch with a compatible course?
+                Want to know about your study status?
+                Want to know how to get the most of your chef thanks to your user guide?
+                Want to access your past order and personal information?
+                All you need is accessible in your account. </div>
+
+            </div>
+
+          </div>
+          <Link to="/Signup">
+            <button className='px-9'>
+              <a className=" mt-6 px-12 py-3 relative rounded group overflow-hidden font-medium  bg-[#96f2d3b2] text-black inline-block">
+                <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-[#88b420] group-hover:h-full opacity-90"></span>
+                <span className="relative group-hover:text-white">
+                  Register now
+                </span>
+              </a>
+
+            </button>
+          </Link>
+        </div>
+
       </div>
+
 
 
       <div className='flex justify-center mb-8'>
@@ -107,10 +141,12 @@ function Home() {
       </div>
 
       <div className="px-4 py-6 sm:px-0 ">
-        <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" > 
           <Card categories={categories} />
         </div>
       </div>
+
+
 
       <div className='w-full bg-white py-16 px-6'>
         <div className='md:max-w-[1080px] m-auto grid md:grid-cols-2 max-w-[350px]'>
