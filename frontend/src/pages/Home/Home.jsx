@@ -95,7 +95,7 @@ function Home() {
                 </button>
               </form>
             </div>
-            <div className="md:order-last order-first flex px-2 py-4 md:py-0" style={{ height: '500px' }}>
+            <div className="md:order-last order-first flex px-2 py-10 md:py-0 " style={{ height: '500px' }}>
               {View}
             </div>
           </div>
