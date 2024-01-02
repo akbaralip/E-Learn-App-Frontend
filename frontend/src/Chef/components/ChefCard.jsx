@@ -19,6 +19,8 @@ function ChefCard({ course }) {
   const cardContainerStyle = {
     width: '300px',
     height: '400px',
+    
+    
   };
 
   const cardStyle = {
@@ -33,7 +35,7 @@ function ChefCard({ course }) {
   };
 
   return (
-    <div className="w-full p-4" style={cardContainerStyle}>
+    <div className="w-full p-4 py-2 " style={cardContainerStyle}>
       <MaterialUICard style={cardStyle}>
         <CardActionArea>
           <CardMedia

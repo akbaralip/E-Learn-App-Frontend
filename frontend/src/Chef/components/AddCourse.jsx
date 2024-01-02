@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLottie } from 'lottie-react';
 import AddCourseAnim from '../../components/Animations/AddCourseAnim.json'
 import { Button } from "@material-tailwind/react";
-
+import video_create from "../../../src/assets/video_create.svg";
 
 function AddCourse() {
 
@@ -185,13 +185,13 @@ function AddCourse() {
                 {buttonClicked ? 'CLOSE FORM' : 'FILL THE FORM NOW'}
               </Button>
 
-              <img src="src/assets/video_create.svg" alt="" className='mb-4' style={{ height: '140px' }} />
+              <img src={video_create} alt="" className='mb-4' style={{ height: '140px' }} />
             </div>
           </div>
 
           {buttonClicked && (
-            <div className="max-w-lg mx-auto rounded-lg overflow-hidden shadow-lg mb-8">
-              <form className="p-8 bg-gradient-to-r from-gray-100 to-green-100" onSubmit={handleSubmit}>
+            <div className="max-w-lg mx-auto rounded-lg overflow-hidden shadow-lg mb-8 px-4">
+              <form className="p-8 " onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
                     Title
@@ -329,7 +329,7 @@ function AddCourse() {
               </form>
             </div>
           )}
-          <div className="flex justify-center" style={{ height: '500px' }}>
+          <div className="flex justify-center px-4 py-12" style={{ height: '500px' }}>
             {View}
           </div>
         </div>

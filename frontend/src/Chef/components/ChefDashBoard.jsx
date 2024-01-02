@@ -119,9 +119,9 @@ function ChefDashBoard() {
 
       </div>
 
-      <div className="flex flex-wrap -mx-4">
+      <div className="">
         {courses.slice(0,4).map((course) => (
-          <div key={course.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-4">
+          <div key={course.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 px-8 ">
             <button onClick={() => handleButtonClick(course.id)}>
               <ChefCard course={course} />
             </button>
