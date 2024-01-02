@@ -38,13 +38,13 @@ function AdminNav() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " >
           <div className="flex items-center justify-between h-20" >
             <div className="flex items-center" >
-              <div className="flex-shrink-0">
+              {/* <div className="flex-shrink-0">
                 <img
                   className="h-12 w-12"
                   src="/src/assets/Icon.png"
                   alt="Brand Icon"
                 />
-              </div>
+              </div> */}
               <Link to={'/'}>
                 <div className="ml-2 text-italic font-serif font-medium text-xl cursor-pointer text-green-800">
                   Chef-Charisma
