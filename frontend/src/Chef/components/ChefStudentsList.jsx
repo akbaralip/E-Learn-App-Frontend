@@ -25,9 +25,9 @@ function ChefStudentsList() {
         <>
             <ChefNavbar />
 
-            <div className="student-list-box relative overflow-x-auto p-14 mt-12 mb-28">
+            <div className="relative overflow-x-auto p-14 mt-12 mb-28">
                 <h2 className='font-bold text-2xl text-gray-800'>Students List</h2>
-                <table className="student-table">
+                <table >
                     <thead>
                         <tr>
                             <th>Student Name</th>
