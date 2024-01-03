@@ -27,7 +27,7 @@ function ChefStudentsList() {
 
             <div className="relative overflow-x-auto p-14 mt-12 mb-28">
                 <h2 className='font-bold text-2xl text-gray-800'>Students List</h2>
-                <table >
+                <table className='min-w-full' >
                     <thead>
                         <tr>
                             <th>Student Name</th>

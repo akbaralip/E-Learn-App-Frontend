@@ -31,7 +31,7 @@ function ChefEarnings() {
       <ChefNavbar />
       <div className='py-8 px-6 mb-28 mt-6 relative overflow-x-auto p-14'>
         <h1 className="text-2xl font-bold mb-6">Purchsed deatails</h1>
-        <table >
+        <table className=' border-collapse  min-w-full'>
           <thead>
             <tr className="bg-gray-200">
               <th className="border p-2">Course</th>

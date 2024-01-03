@@ -83,15 +83,15 @@ function ChefChat() {
         }
     };
 
-    
+
 
     return (
         <>
             <ChefNavbar />
             <div>
                 <div className="p-4 mt-6 mb-24">
-                    <div className="chat-container max-w-2xl mx-auto ">
-                        <div className="chat-messages border rounded bg-white p-4 mb-4 max-h-96 " ref={chatContainerRef}>
+                    <div className="chat-container max-w-2xl mx-auto">
+                        <div className="chat-messages border rounded bg-white p-4 mb-4 max-h-96 overflow-auto" ref={chatContainerRef}>
                             {messages.map((message, index) => (
                                 <div
                                     key={index}
@@ -115,13 +115,13 @@ function ChefChat() {
                                 </div>
                             ))}
                         </div>
-                        <div className="chat-input flex items-center">
+                        <div className="chat-input flex flex-col md:flex-row items-stretch">
                             <input
                                 type="text"
                                 placeholder="Type your message..."
                                 value={newMessage}
                                 onChange={(e) => setNewMessage(e.target.value)}
-                                className="flex-1 border rounded p-2 mr-2"
+                                className="flex-1 border rounded p-2 mr-2 mb-2 md:mb-0"
                             />
                             <button
                                 onClick={sendMessage}
@@ -133,6 +133,7 @@ function ChefChat() {
                     </div>
                 </div>
             </div>
+
             <ChefFooter />
         </>
     );

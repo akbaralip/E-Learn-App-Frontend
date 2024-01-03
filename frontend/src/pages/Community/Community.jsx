@@ -127,7 +127,7 @@ function Community() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-wrap mb-6">
+      <div className="flex flex-wrap ">
         <div className="bg-gray-100 p-4 w-full md:w-1/4">
           <h2 className="text-xl font-bold mb-4">Communities</h2>
           <ul>

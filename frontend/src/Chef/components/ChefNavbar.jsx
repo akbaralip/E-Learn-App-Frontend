@@ -151,33 +151,33 @@ function ChefNavbar() {
                 {(ref) => (
                     <div className="md:hidden" id="mobile-menu">
                         <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <a
-                                href="#"
+                            <Link
+                                to="/"  
                                 className="hover:bg-stone-500 text-black block px-3 py-2 rounded-md text-base font-semibold"
                             >
                                 HOME
-                            </a>
+                            </Link>
 
-                            <a
-                                href="#"
-                                className="text-gray-300 hover:bg-stone-500 hover:text-white block px-3 py-2 rounded-md text-base font-semibold"
+                            <Link
+                                to="/add_courses"  
+                                className="text-gray-500 hover:bg-stone-500 hover:text-white block px-3 py-2 rounded-md text-base font-semibold"
                             >
-                                COURSES
-                            </a>
+                                ADD COURSES
+                            </Link>
 
-                            <a
-                                href="#"
-                                className="text-gray-300 hover:bg-stone-500 hover:text-white block px-3 py-2 rounded-md text-base font-semibold"
+                            <Link
+                                to="/chef_chat_port"  
+                                className="text-gray-500 hover:bg-stone-500 hover:text-white block px-3 py-2 rounded-md text-base font-semibold"
                             >
-                                COMMUNITY
-                            </a>
+                                CHAT
+                            </Link>
 
-                            <a
-                                href="#"
-                                className="text-gray-300 hover:bg-stone-500 hover:text-white block px-3 py-2 rounded-md text-base font-semibold"
+                            <Link
+                                to="/about" 
+                                className="text-gray-500 hover:bg-stone-500 hover:text-white block px-3 py-2 rounded-md text-base font-semibold"
                             >
                                 ABOUT
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 )}
