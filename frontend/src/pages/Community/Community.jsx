@@ -44,13 +44,14 @@ function Community() {
     try {
       const response = await axiosInstance.get(`courses_user_purchased/${userId}/`);
       setPurchasedCourses(response.data.purchased);
-      if (response.data.purchased.length === 0) {
-        setShowPurchaseModal(true);
-      }
     } catch (error) {
       console.log('Error', error);
     }
-    
+    fetchPurchasedCourses().then(() => {
+      if (purchasedCourses.length === 0) {
+        setShowPurchaseModal(true);
+      }
+    });
   };
 
   const handleCourseClick = (course) => {
@@ -60,7 +61,10 @@ function Community() {
 
   useEffect(() => {
     fetchPurchasedCourses();
-  }, [userId]);
+    if (purchasedCourses.length === 0) {
+      setShowPurchaseModal(true);
+    }
+  }, [purchasedCourses]);
 
   
 
