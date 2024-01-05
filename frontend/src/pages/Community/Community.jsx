@@ -3,12 +3,16 @@ import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import { useSelector } from 'react-redux';
 import { VscAccount } from 'react-icons/vsc';
 import Footer from '../../components/Footer';
+import Modal from "react-modal";
+Modal.setAppElement('#root');
 import './Chat.css';
 import Navbar from '../../components/Navbar';
 import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
+import { Link } from 'react-router-dom';
 
 function Community() {
   const [purchasedCourses, setPurchasedCourses] = useState([]);
+  const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const username = useSelector((state) => state.auth.username);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -52,7 +56,12 @@ function Community() {
 
   useEffect(() => {
     fetchPurchasedCourses();
-  }, []);
+    if (purchasedCourses.length === 0) {
+      setShowPurchaseModal(true);
+    }
+  }, [purchasedCourses]);
+
+  
 
   useEffect(() => {
     const initializeWebSocket = () => {
@@ -131,7 +140,7 @@ function Community() {
         <div className="bg-gray-100 p-4 w-full md:w-1/4">
           <h2 className="text-xl font-bold mb-4">Communities</h2>
           <ul>
-            { purchasedCourses && purchasedCourses.map((course, index) => (
+            {purchasedCourses && purchasedCourses.map((course, index) => (
               <li
                 key={index}
                 className={`flex items-center mb-2 rounded border p-2 cursor-pointer ${selectedCourse === course.course.title ? 'bg-blue-100' : ''
@@ -146,6 +155,33 @@ function Community() {
             ))}
           </ul>
         </div>
+
+        <Modal
+          isOpen={showPurchaseModal}
+          onRequestClose={closePurchaseModal}
+          className="modal bg-opacity-100 bg-black  fixed inset-0 flex items-center justify-center z-50 px-4 py-2 mt-8"
+
+        >
+          <div className="modal-content bg-white w-96 md:w-[920px] md:mt-11  rounded-lg shadow-lg px-14 py-2">
+            <div className="flex flex-col justify-between h-full items-center">
+              <div className="mb-6 text-center">
+                <h2 className="text-4xl font-medium text-gray-700 mt-4 mb-12">Please Purchase a Course</h2>
+                <p className="text-gray-700 mb-4">
+                  To join the community, please purchase at least one course and become a part of the community.
+                </p>
+              </div>
+              <Link to={'/courses'}>
+                <button
+                  className="bg-gradient-to-r from-green-400 to-yellow-300 text-white px-6 py-3 rounded-lg transition duration-300 ease-in-out hover:opacity-70 mb-6"
+                >
+                  EXPLORE COURSES
+                </button>
+              </Link>
+            </div>
+          </div>
+
+
+        </Modal>
 
         <div className="p-4 w-full md:w-3/4 bg-gray-50">
           <div className="max-w-2xl mx-auto">
