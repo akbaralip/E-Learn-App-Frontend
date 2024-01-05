@@ -50,11 +50,6 @@ function Community() {
     } catch (error) {
       console.log('Error', error);
     }
-    fetchPurchasedCourses().then(() => {
-      if (purchasedCourses.length === 0) {
-        setShowPurchaseModal(true);
-      }
-    });
   };
 
   const handleCourseClick = (course) => {
@@ -64,7 +59,7 @@ function Community() {
 
   useEffect(() => {
     fetchPurchasedCourses();
-  }, [userId, purchasedCourses]);
+  }, [userId]);
 
   
 
