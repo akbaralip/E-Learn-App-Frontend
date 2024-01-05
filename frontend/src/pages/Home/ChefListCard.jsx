@@ -14,6 +14,7 @@ function ChefListCard({ chefs }) {
     return null;
   }
 
+  
   const displayedChefs = chefs.slice(0, 4);
 
   return (
