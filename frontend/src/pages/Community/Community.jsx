@@ -158,7 +158,6 @@ function Community() {
 
         <Modal
           isOpen={showPurchaseModal}
-          onRequestClose={closePurchaseModal}
           className="modal bg-opacity-100 bg-black  fixed inset-0 flex items-center justify-center z-50 px-4 py-2 mt-8"
 
         >
