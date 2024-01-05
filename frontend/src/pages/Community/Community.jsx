@@ -44,7 +44,7 @@ function Community() {
     try {
       const response = await axiosInstance.get(`courses_user_purchased/${userId}/`);
       setPurchasedCourses(response.data.purchased);
-      if (response.data.purchased && response.data.purchased.length === 0) {
+      if (!response.data.purchased?.length) {
         setShowPurchaseModal(true);
       }
     } catch (error) {
