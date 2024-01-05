@@ -64,7 +64,7 @@ function Community() {
 
   useEffect(() => {
     fetchPurchasedCourses();
-  }, [userId, purchasedCourses.length]);
+  }, [userId, purchasedCourses]);
 
   
 
