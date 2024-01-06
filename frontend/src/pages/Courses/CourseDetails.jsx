@@ -7,10 +7,12 @@ import Footer from '../../components/Footer';
 import { Button } from '@material-tailwind/react';
 import { useSelector } from 'react-redux';
 import Navbar from '../../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 function CourseDetails() {
   const user = useSelector((state) => state.auth.username)
-
+  const navigate = useNavigate();
+  
   const { courseId } = useParams();
   const [videos, setVideos] = useState([]);
   const [courses, setCourses] = useState([]);
@@ -43,6 +45,13 @@ function CourseDetails() {
     fetchVideos();
   }, [courseId]);
 
+  const handlePurchase = async () => {
+    if (!user) {
+      navigate('/signin');
+      return;
+    }
+  }
+ 
   return (
     <>
       <Navbar />
@@ -94,7 +103,7 @@ function CourseDetails() {
                 <div className='mt-7 flex justify-end'>
                   {!isPurchased && (
                     <form action={`${baseUrl}/api/stripe/create-checkout-session/${courseId}/${user}/`} method='POST'>
-                      <Button type='submit' className="bg-orange-500 text-white hover:bg-orange-600">
+                      <Button type='submit' className="bg-orange-500 text-white hover:bg-orange-600"  onClick={handlePurchase}>
                         Purchase now
                       </Button>
                     </form>

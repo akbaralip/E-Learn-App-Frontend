@@ -76,7 +76,7 @@ function App() {
                 <Route path='*' element={<NotFound />} />
 
                 <Route path='/community' element={<Protected><Community /></Protected>} />
-                <Route path="/courses" element={<Protected><Courses /></Protected>} />
+                <Route path="/courses" element={<Courses />} />
 
                 <Route path="/change_password" element={<ForgetChangePassword />} />
 
@@ -98,10 +98,10 @@ function App() {
                 <Route path='/chef_earnings' element={<ChefAuthProtected><ChefEarnings /></ChefAuthProtected>} />
                 <Route path='/chef_chat_port' element={<ChefAuthProtected><ChefChat /></ChefAuthProtected>} />
 
-                <Route path='/show_details/:courseId' element={<UserAuthProtected><CourseDetails /></UserAuthProtected>} />
+                <Route path='/show_details/:courseId' element={<CourseDetails />} />
                 <Route path='/mylearnings' element={<UserAuthProtected><MyLearnings /></UserAuthProtected>} />
                 <Route path='/show_purchased_course_details/:courseId' element={<UserAuthProtected><PurchasedCourse /></UserAuthProtected>} />
-                <Route path='/selectedCategory/:categoryId' element={<UserAuthProtected><ItemList /></UserAuthProtected>} />
+                <Route path='/selectedCategory/:categoryId' element={<ItemList />} />
 
 
               </Routes>
