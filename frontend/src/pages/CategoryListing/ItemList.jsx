@@ -11,7 +11,7 @@ function ItemList() {
     const { categoryId } = useParams();
     const [courses, setCourses] = useState([]);
     const [visibleCourseId, setVisibleCourseId] = useState(null);
-    console.log('courses=====>>>', courses)
+    
     const fetchCourses = async () => {
         try {
             const response = await axiosInstance.get(`/courses/category/${categoryId}/`);

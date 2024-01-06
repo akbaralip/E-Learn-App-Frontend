@@ -37,6 +37,7 @@ import ChefChat from './Chef/components/ChefChat';
 import AdminChat from './Admin/AdminComponents/AdminChat';
 import Categories from './Admin/AdminComponents/Categories';
 import UserProfile from './User/UserProfile/UserProfile';
+import ChefCoursesList from './pages/ChefCourseList/ChefCoursesList.jsx';
 
 function App() {
   const [Loading, setLoading] = useState(false)
@@ -102,6 +103,7 @@ function App() {
                 <Route path='/mylearnings' element={<UserAuthProtected><MyLearnings /></UserAuthProtected>} />
                 <Route path='/show_purchased_course_details/:courseId' element={<UserAuthProtected><PurchasedCourse /></UserAuthProtected>} />
                 <Route path='/selectedCategory/:categoryId' element={<ItemList />} />
+                <Route path='/selectedChefCourses/:chefId' element={<ChefCoursesList />} />
 
 
               </Routes>
