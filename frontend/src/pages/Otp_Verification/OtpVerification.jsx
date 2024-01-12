@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import { Textarea } from "@material-tailwind/react";
+import toast from 'react-hot-toast';
 
 function OtpVerification() {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ function OtpVerification() {
         if (response) {
           setIsVerified(true);
           navigate('/Signin');
+          toast.success('Great..!! Succefully Registered')
         } else {
           setError('OTP verification failed');
         }
