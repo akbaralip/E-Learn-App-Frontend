@@ -30,7 +30,7 @@ function OtpVerification() {
         }
       })
       .catch((error) => {
-        setError('An error occurred while verifying OTP');
+        toast.error('An error occurred while verifying OTP');
       });
   };
 
