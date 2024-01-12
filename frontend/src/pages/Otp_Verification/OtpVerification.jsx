@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import { Textarea } from "@material-tailwind/react";
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 function OtpVerification() {
   const navigate = useNavigate();
@@ -35,7 +35,9 @@ function OtpVerification() {
   };
 
   return (
+    
     <div className="modal  bg-black  fixed inset-0 flex items-center justify-center z-50">
+      <Toaster/>
       <div className="bg-gray-100 p-6 shadow-lg rounded-lg w-full max-w-md">
         <h2 className="text-2xl font-semibold mb-4">OTP Verification</h2>
         {isVerified ? (
