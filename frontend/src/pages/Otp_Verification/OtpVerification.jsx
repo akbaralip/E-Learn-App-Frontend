@@ -19,8 +19,12 @@ function OtpVerification() {
       .then((response) => {
         if (response) {
           setIsVerified(true);
-          navigate('/Signin');
-          toast.success('Great..!! Succefully Registered')
+          toast.success('Great! Successfully verified OTP.');
+
+          setTimeout(() => {
+            navigate('/Signin');
+          }, 2000);
+          
         } else {
           setError('OTP verification failed');
         }
