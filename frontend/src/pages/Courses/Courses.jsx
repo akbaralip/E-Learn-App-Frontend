@@ -6,6 +6,8 @@ import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
+import Lottie from 'lottie-react';
+import loadinglottie from '../../../src/components/Animations/Loading.json'
 
 function Courses() {
   const [courses, setCourses] = useState([]);
@@ -15,6 +17,7 @@ function Courses() {
   const [categoryFilter, setCategoryFilter] = useState('');
   const [categories, setCategories] = useState([]);
   const [prices, setPrices] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchAllCourses = async () => {
     try {
@@ -23,8 +26,10 @@ function Courses() {
       setCourses(response.data.courses);
       setCategories(response.data.categories);
       setPrices(response.data.prices);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching categories:', error);
+      setLoading(false);
     }
   };
 
@@ -41,6 +46,12 @@ function Courses() {
   return (
     <>
       <Navbar />
+
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
       <div className="sm:flex justify-between mb-4 mt-4 p-6">
         <input
           type="text"

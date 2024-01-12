@@ -23,7 +23,7 @@ function OtpVerification() {
 
           setTimeout(() => {
             navigate('/Signin');
-          }, 2000);
+          }, 3000);
           
         } else {
           setError('OTP verification failed');
