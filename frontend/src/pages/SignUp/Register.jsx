@@ -93,6 +93,9 @@ function Register() {
         return toast.error('Please fill out all fields');
       }
     }
+    if (usernameError || emailError || phoneError || passError) {
+      return toast.error('Please fix validation errors before submitting.');
+    }
 
     try {
       const userData = {
