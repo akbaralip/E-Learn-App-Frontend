@@ -9,6 +9,9 @@ import './Chat.css';
 import Navbar from '../../components/Navbar';
 import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import { Link } from 'react-router-dom';
+import Lottie from 'lottie-react';
+import loadinglottie from '../../../src/components/Animations/Loading.json'
+
 
 function Community() {
   const [purchasedCourses, setPurchasedCourses] = useState([]);
@@ -19,6 +22,8 @@ function Community() {
   const [newMessage, setNewMessage] = useState('');
   const chatContainerRef = useRef(null);
   const [socket, setSocket] = useState(null);
+  const [loading, setLoading] = useState(true);
+
 
   const userId = localStorage.getItem('user_id');
 
@@ -44,11 +49,14 @@ function Community() {
     try {
       const response = await axiosInstance.get(`courses_user_purchased/${userId}/`);
       setPurchasedCourses(response.data.purchased);
+      setLoading(false);
       if (!response.data.purchased?.length) {
         setShowPurchaseModal(true);
+        setLoading(false);
       }
     } catch (error) {
       console.log('Error', error);
+      setLoading(false);
     }
   };
 
@@ -136,6 +144,11 @@ function Community() {
   return (
     <>
       <Navbar />
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
       <div className="flex flex-wrap ">
         <div className="bg-gray-100 p-4 w-full md:w-1/4">
           <h2 className="text-xl font-bold mb-4">Communities</h2>

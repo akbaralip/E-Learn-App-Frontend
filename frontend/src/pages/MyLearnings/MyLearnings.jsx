@@ -5,21 +5,29 @@ import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import { Link } from 'react-router-dom';
 import { Button } from "@material-tailwind/react";
 import Navbar from '../../components/Navbar';
+import Lottie from 'lottie-react';
+import loadinglottie from '../../../src/components/Animations/Loading.json'
 
 
 function MyLearnings() {
   const [purchasedCourses, setPurchasedCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+
 
   var userId = localStorage.getItem('user_id');
-  
+
 
   const fetchVideos = async () => {
     try {
 
       const response = await axiosInstance.get(`courses_user_purchased/${userId}/`);
       setPurchasedCourses(response.data.purchased);
+      setLoading(false);
+
     } catch (error) {
       console.error('Error fetching videos:', error);
+      setLoading(false);
+
     }
   };
 
@@ -30,6 +38,14 @@ function MyLearnings() {
   return (
     <>
       <Navbar />
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
+      <div className=" p-4 mb-6">
+        <h1 className="text-gray-400 text-2xl font-bold">My Learnings</h1>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 mt-6">
         {purchasedCourses.map((data) => (
 

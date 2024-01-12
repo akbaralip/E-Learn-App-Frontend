@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import ReactPlayer from 'react-player';
@@ -8,23 +8,31 @@ import { Button } from '@material-tailwind/react';
 import { useSelector } from 'react-redux';
 import Navbar from '../../components/Navbar';
 import { useNavigate } from 'react-router-dom';
+import Lottie from 'lottie-react';
+import loadinglottie from '../../../src/components/Animations/Loading.json'
 
 function CourseDetails() {
   const user = useSelector((state) => state.auth.username)
   const navigate = useNavigate();
-  
+
   const { courseId } = useParams();
   const [videos, setVideos] = useState([]);
   const [courses, setCourses] = useState([]);
   const [isPurchased, setIsPurchased] = useState(false);
+  const [loading, setLoading] = useState(true);
+
 
   const fetchVideos = async () => {
     try {
       const response = await axiosInstance.get(`courses_videos/${courseId}/`);
       setVideos(response.data.videos);
       setCourses(response.data.course);
+      setLoading(false);
+
     } catch (error) {
       console.error('Error fetching videos:', error);
+      setLoading(false);
+
     }
   };
 
@@ -51,10 +59,17 @@ function CourseDetails() {
       return;
     }
   }
- 
+
   return (
     <>
       <Navbar />
+
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
+
       <div className='mb-10 md:mb-24 mt-8'>
         {courses.map((course) => (
           <div key={course.id} className="flex flex-col md:flex-row mb-4 space-y-4 md:space-y-0">
@@ -101,12 +116,18 @@ function CourseDetails() {
                   <p className="text-x text-blue-800"><strong>Lessons: <span>{videos.length}</span></strong></p>
                 </div>
                 <div className='mt-7 flex justify-end'>
-                  {!isPurchased && (
+                  {!isPurchased ? (
                     <form action={`${baseUrl}/api/stripe/create-checkout-session/${courseId}/${user}/`} method='POST'>
-                      <Button type='submit' className="bg-orange-500 text-white hover:bg-orange-600"  onClick={handlePurchase}>
+                      <Button type='submit' className="bg-orange-500 text-white hover:bg-orange-600" onClick={handlePurchase}>
                         Purchase now
                       </Button>
                     </form>
+                  ) : (
+                    <Link to="/mylearnings">
+                      <Button className="bg-green-500 text-white hover:bg-green-600">
+                        Go to My Learnings
+                      </Button>
+                    </Link>
                   )}
                 </div>
               </div>

@@ -9,7 +9,7 @@ import Navbar from '../../components/Navbar';
 import Lottie from 'lottie-react';
 import loadinglottie from '../../../src/components/Animations/Loading.json'
 
-function Courses() {
+function Courses() {  
   const [courses, setCourses] = useState([]);
   const [visibleCourseId, setVisibleCourseId] = useState(null);
   const [searchInput, setSearchInput] = useState('');

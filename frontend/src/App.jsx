@@ -59,12 +59,14 @@ function App() {
       <Router>
 
         {
-          Loading ?
-
-            <div className="flex justify-center items-center  p-16 h-[500px]">
-              <Lottie animationData={loadinglottie} className="w-3/12" />
+          Loading ? (
+            <div className="flex justify-center items-center p-16 h-[500px]">
+              <Lottie
+                animationData={loadinglottie}
+                className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3"
+              />
             </div>
-            :
+          ) :
             <div  >
 
               <Routes>
