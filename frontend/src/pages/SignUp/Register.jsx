@@ -48,7 +48,10 @@ function Register() {
   const validateUsername = (value) => {
     if (/\d/.test(value)) {
       setUsernameError('Username should not contain numbers.');
-    } else {
+    }
+    else if (/\s/.test(value)) {
+      setUsernameError('Username should not contain spaces.');
+    }else {
       setUsernameError('');
     }
   };
@@ -73,11 +76,14 @@ function Register() {
 
   const validatePassword = (value) => {
     if (value.length < 6) {
-      setPassError('Should contain more than 5 digits.');
+      setPassError('Should contain more than 5 characters.');
+    } else if (/\s/.test(value)) {
+      setPassError('Should not contain spaces.');
     } else {
       setPassError('');
     }
   };
+  
 
   const submit = async (e) => {
     e.preventDefault();

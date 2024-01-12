@@ -11,7 +11,7 @@ function ChefCoursesList() {
     const { chefId } = useParams();
     const [chefCourses, setChefCourses] = useState([]);
     const [visibleCourseId, setVisibleCourseId] = useState(null);
-    console.log('Chef Id:', chefId);
+    
     const fetchCHefCourses = async () => {
         try {
             const response = await axiosInstance.get(`/chef/courses/${chefId}/`);
