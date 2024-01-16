@@ -40,12 +40,7 @@ function ItemList() {
     return (
         <>
             <Navbar />
-
-            {loading && (
-                <div className="flex justify-center items-center p-16 h-[500px]">
-                    <Lottie animationData={loadinglottie} className="w-3/12" />
-                </div>
-            )}
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
                 {courses.map((course) => (
                     <div key={course.id} className="flex flex-col w-full h-full space-y-4 mt-4 mb-5 p-2">
@@ -84,7 +79,14 @@ function ItemList() {
                     </div>
                 ))}
             </div>
+
             <Footer />
+            {loading && (
+                <div className="flex justify-center items-center p-16 h-[500px]">
+                    <Lottie animationData={loadinglottie} className="w-3/12" />
+                </div>
+            )}
+            
         </>
     );
 }

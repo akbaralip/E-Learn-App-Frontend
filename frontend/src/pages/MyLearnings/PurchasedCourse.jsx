@@ -43,11 +43,7 @@ function PurchasedCourse() {
   return (
     <>
       <Navbar />
-      {loading && (
-        <div className="flex justify-center items-center p-16 h-[500px]">
-          <Lottie animationData={loadinglottie} className="w-3/12" />
-        </div>
-      )}
+      
 
       <div className="rounded mb-2 p-8">
         
@@ -85,6 +81,11 @@ function PurchasedCourse() {
           </div>
         </div>
       </div>
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
 
       <Footer />
     </>

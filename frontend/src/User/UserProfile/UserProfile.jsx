@@ -192,9 +192,15 @@ function UserProfile() {
         if (!changePassFormData.newPassword) {
             setNewPasswordError('Please enter a new password.');
             isValid = false;
-        } else {
+          } else if (changePassFormData.newPassword.length < 6) {
+            setNewPasswordError('New password must be at least 5 characters long.');
+            isValid = false;
+          } else if (/\s/.test(changePassFormData.newPassword)) {
+            setNewPasswordError('New password cannot contain spaces.');
+            isValid = false;
+          } else {
             setNewPasswordError('');
-        }
+          }
 
         if (!changePassFormData.confirmPassword) {
             setConfirmPasswordError('Please enter a confirm password.');

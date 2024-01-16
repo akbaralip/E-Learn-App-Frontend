@@ -38,11 +38,7 @@ function MyLearnings() {
   return (
     <>
       <Navbar />
-      {loading && (
-        <div className="flex justify-center items-center p-16 h-[500px]">
-          <Lottie animationData={loadinglottie} className="w-3/12" />
-        </div>
-      )}
+      
       <div className=" p-4 mb-6">
         <h1 className="text-gray-400 text-2xl font-bold">My Learnings</h1>
       </div>
@@ -76,6 +72,11 @@ function MyLearnings() {
           </div>
         ))}
       </div>
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
       <Footer />
     </>
   )

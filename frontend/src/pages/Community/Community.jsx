@@ -143,6 +143,7 @@ function Community() {
 
   return (
     <>
+    
       <Navbar />
       {loading && (
         <div className="flex justify-center items-center p-16 h-[500px]">
@@ -150,6 +151,7 @@ function Community() {
         </div>
       )}
       <div className="flex flex-wrap ">
+        
         <div className="bg-gray-100 p-4 w-full md:w-1/4">
           <h2 className="text-xl font-bold mb-4">Communities</h2>
           <ul>
@@ -249,7 +251,9 @@ function Community() {
           </div>
         </div>
       </div>
+      
       <Footer />
+      
     </>
   );
 }

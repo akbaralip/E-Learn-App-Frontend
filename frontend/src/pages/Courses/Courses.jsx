@@ -47,11 +47,7 @@ function Courses() {
     <>
       <Navbar />
 
-      {loading && (
-        <div className="flex justify-center items-center p-16 h-[500px]">
-          <Lottie animationData={loadinglottie} className="w-3/12" />
-        </div>
-      )}
+      
       <div className="sm:flex justify-between mb-4 mt-4 p-6">
         <input
           type="text"
@@ -128,6 +124,12 @@ function Courses() {
             </div>
           ))}
       </div>
+      
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
       <Footer />
     </>
   );

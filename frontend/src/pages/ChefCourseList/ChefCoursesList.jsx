@@ -6,18 +6,27 @@ import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
+import Lottie from 'lottie-react';
+import loadinglottie from '../../../src/components/Animations/Loading.json'
+
 
 function ChefCoursesList() {
     const { chefId } = useParams();
     const [chefCourses, setChefCourses] = useState([]);
     const [visibleCourseId, setVisibleCourseId] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     
     const fetchCHefCourses = async () => {
         try {
             const response = await axiosInstance.get(`/chef/courses/${chefId}/`);
             setChefCourses(response.data);
+            setLoading(false);
+
         } catch (error) {
             console.error('Error fetching courses:', error);
+            setLoading(false);
+
         }
     }
 
@@ -72,7 +81,14 @@ function ChefCoursesList() {
                     </div>
                 ))}
             </div>
+            
+            
             <Footer />
+            {loading && (
+                <div className="flex justify-center items-center p-16 h-[500px]">
+                    <Lottie animationData={loadinglottie} className="w-3/12" />
+                </div>
+            )}
         </>
     )
 }

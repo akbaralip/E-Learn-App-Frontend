@@ -64,13 +64,10 @@ function CourseDetails() {
     <>
       <Navbar />
 
-      {loading && (
-        <div className="flex justify-center items-center p-16 h-[500px]">
-          <Lottie animationData={loadinglottie} className="w-3/12" />
-        </div>
-      )}
+      
 
-      <div className='mb-10 md:mb-24 mt-8'>
+      <div className='mb-10 md:mb-24 mt-8 '>
+      
         {courses.map((course) => (
           <div key={course.id} className="flex flex-col md:flex-row mb-4 space-y-4 md:space-y-0">
             <div className="md:w-2/3  relative p-2">
@@ -135,8 +132,13 @@ function CourseDetails() {
           </div>
         ))}
       </div>
-
+      {loading && (
+        <div className="flex justify-center items-center p-16 h-[500px]">
+          <Lottie animationData={loadinglottie} className="w-3/12" />
+        </div>
+      )}
       <Footer />
+      
     </>
   );
 }
