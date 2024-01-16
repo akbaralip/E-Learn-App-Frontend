@@ -82,13 +82,13 @@ function ChefCoursesList() {
                 ))}
             </div>
             
-            
-            <Footer />
             {loading && (
                 <div className="flex justify-center items-center p-16 h-[500px]">
                     <Lottie animationData={loadinglottie} className="w-3/12" />
                 </div>
             )}
+            <Footer />
+            
         </>
     )
 }
