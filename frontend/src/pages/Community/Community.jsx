@@ -150,9 +150,9 @@ function Community() {
           <Lottie animationData={loadinglottie} className="w-3/12" />
         </div>
       )}
-      <div className="flex flex-wrap ">
+      <div className="flex flex-wrap w-full h-full">
         
-        <div className="bg-gray-100 p-4 w-full md:w-1/4">
+        <div className="bg-gray-100 p-4 w-full h-full md:w-1/4">
           <h2 className="text-xl font-bold mb-4">Communities</h2>
           <ul>
             {purchasedCourses && purchasedCourses.map((course, index) => (
