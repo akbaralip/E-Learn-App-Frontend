@@ -69,7 +69,7 @@ function Community() {
     fetchPurchasedCourses();
   }, [userId]);
 
-  
+
 
   useEffect(() => {
     const initializeWebSocket = () => {
@@ -143,28 +143,24 @@ function Community() {
 
   return (
     <>
-    
+
       <Navbar />
       {loading && (
         <div className="flex justify-center items-center p-16 h-[500px]">
           <Lottie animationData={loadinglottie} className="w-3/12" />
         </div>
       )}
-      <div className="flex flex-wrap w-full h-full">
-        
+      <div className="flex flex-wrap min-h-screen w-full">
         <div className="bg-gray-100 p-4 w-full h-full md:w-1/4">
           <h2 className="text-xl font-bold mb-4">Communities</h2>
           <ul>
             {purchasedCourses && purchasedCourses.map((course, index) => (
               <li
                 key={index}
-                className={`flex items-center mb-2 rounded border p-2 cursor-pointer ${selectedCourse === course.course.title ? 'bg-blue-100' : ''
-                  }`}
+                className={`flex items-center mb-2 rounded border p-2 cursor-pointer ${selectedCourse === course.course.title ? 'bg-blue-100' : ''}`}
                 onClick={() => handleCourseClick(course.course.title)}
               >
-                <img src={`${baseUrl}${course.course.cover_image}`} alt={`${course.course.title} cover`}
-                  className="w-8 h-8 rounded-full mr-2"
-                />
+                <img src={`${baseUrl}${course.course.cover_image}`} alt={`${course.course.title} cover`} className="w-8 h-8 rounded-full mr-2" />
                 {course.course.title}
               </li>
             ))}
@@ -173,10 +169,9 @@ function Community() {
 
         <Modal
           isOpen={showPurchaseModal}
-          className="modal bg-opacity-100 bg-black  fixed inset-0 flex items-center justify-center z-50 px-4 py-2 mt-8"
-
+          className="modal bg-opacity-100 bg-black fixed inset-0 flex items-center justify-center z-50 px-4 py-2 mt-8"
         >
-          <div className="modal-content bg-white w-96 md:w-[920px] md:mt-11  rounded-lg shadow-lg px-14 py-2">
+          <div className="modal-content bg-white w-96 md:w-[920px] md:mt-11 rounded-lg shadow-lg px-14 py-2">
             <div className="flex flex-col justify-between h-full items-center">
               <div className="mb-6 text-center">
                 <h2 className="text-4xl font-medium text-gray-700 mt-4 mb-12">Please Purchase a Course</h2>
@@ -193,11 +188,9 @@ function Community() {
               </Link>
             </div>
           </div>
-
-
         </Modal>
 
-        <div className="p-4 w-full md:w-3/4 bg-gray-50">
+        <div className="p-4 w-full md:w-3/4 bg-gray-50 flex-1">
           <div className="max-w-2xl mx-auto">
             {selectedCourse ? (
               <>
@@ -251,9 +244,10 @@ function Community() {
           </div>
         </div>
       </div>
-      
-      
-      
+
+
+
+
     </>
   );
 }
