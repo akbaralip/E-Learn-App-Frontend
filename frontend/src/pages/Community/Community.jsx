@@ -252,7 +252,7 @@ function Community() {
         </div>
       </div>
       
-      <Footer />
+      
       
     </>
   );
