@@ -151,7 +151,7 @@ function Community() {
         </div>
       )}
       <div className="flex flex-wrap min-h-screen w-full">
-        <div className="bg-gray-100 p-4 w-full h-full md:w-1/4">
+        <div className=" p-4 w-full h-full md:w-1/4">
           <h2 className="text-xl font-bold mb-4">Communities</h2>
           <ul>
             {purchasedCourses && purchasedCourses.map((course, index) => (
