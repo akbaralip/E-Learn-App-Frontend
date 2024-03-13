@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = 'https://akbarali.shop'
+const baseURL = 'http://16.171.139.168/'
 
 
 const axiosInstance = axios.create({
