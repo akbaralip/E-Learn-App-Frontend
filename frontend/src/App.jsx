@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Register from './pages/SignUp/Register'
+const Register = React.lazy(() => import('./pages/SignUp/Register'))
 import Login from './pages/SignIn/Login';
 import './App.css';
 import Courses from './pages/Courses/Courses';
@@ -72,7 +72,12 @@ function App() {
               <Routes>
                 <Route path="/" element={<RoleDirector><Home /></RoleDirector>} />
 
-                <Route path="/signup" element={<AuthProtected><Register></Register></AuthProtected>} />
+                <Route path="/signup" element={<AuthProtected><React.Suspense fallback={<div className="flex justify-center items-center p-16 h-[500px]">
+                  <Lottie
+                    animationData={loadinglottie}
+                    className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3"
+                  />
+                </div>}><Register /></React.Suspense></AuthProtected>} />
                 <Route path="/signin" element={<AuthProtected><Login /></AuthProtected>} />
 
                 <Route path='/about' element={<About />} />
