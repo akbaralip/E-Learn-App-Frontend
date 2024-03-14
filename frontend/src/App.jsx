@@ -72,8 +72,14 @@ function App() {
               <Routes>
                 <Route path="/" element={<RoleDirector><Home /></RoleDirector>} />
 
-                <Route path="/signup" element={<AuthProtected><React.Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', height: '100vh', width: '100vw' }}>Loading....</div>}><Register /></React.Suspense></AuthProtected>} />
-                <Route path="/signin" element={<AuthProtected><Login /></AuthProtected>} />
+                <Route path="/signup" element={<AuthProtected><React.Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', height: '100vh', width: '100vw' }}><Lottie
+                  animationData={loadinglottie}
+                  className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3"
+                /></div>}><Register /></React.Suspense></AuthProtected>} />
+                <Route path="/signin" element={<AuthProtected><React.Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', height: '100vh', width: '100vw' }}><Lottie
+                  animationData={loadinglottie}
+                  className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3"
+                /></div>}><Login /></React.Suspense></AuthProtected>} />
 
                 <Route path='/about' element={<About />} />
                 <Route path='*' element={<NotFound />} />
