@@ -72,9 +72,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<RoleDirector><Home /></RoleDirector>} />
 
-                <Route path="/signup" element={<AuthProtected><React.Suspense fallback={<div className="flex justify-center items-center p-16 h-[500px] text-red-700">
-                 Loading.........
-                </div>}><Register /></React.Suspense></AuthProtected>} />
+                <Route path="/signup" element={<AuthProtected><React.Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', height: '100vh', width: '100vw' }}><h1>Loading....</h1></div>}><Register /></React.Suspense></AuthProtected>} />
                 <Route path="/signin" element={<AuthProtected><Login /></AuthProtected>} />
 
                 <Route path='/about' element={<About />} />
