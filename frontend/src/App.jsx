@@ -72,11 +72,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<RoleDirector><Home /></RoleDirector>} />
 
-                <Route path="/signup" element={<AuthProtected><React.Suspense fallback={<div className="flex justify-center items-center p-16 h-[500px]">
-                  <Lottie
-                    animationData={loadinglottie}
-                    className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3"
-                  />
+                <Route path="/signup" element={<AuthProtected><React.Suspense fallback={<div className="flex justify-center items-center p-16 h-[500px] text-red-700">
+                 Loading.........
                 </div>}><Register /></React.Suspense></AuthProtected>} />
                 <Route path="/signin" element={<AuthProtected><Login /></AuthProtected>} />
 
