@@ -9,7 +9,7 @@ import Navbar from '../../components/Navbar';
 import Lottie from 'lottie-react';
 import loadinglottie from '../../../src/components/Animations/Loading.json'
 
-function Courses() {  
+function Courses() {
   const [courses, setCourses] = useState([]);
   const [visibleCourseId, setVisibleCourseId] = useState(null);
   const [searchInput, setSearchInput] = useState('');
@@ -47,7 +47,7 @@ function Courses() {
     <>
       <Navbar />
 
-      
+
       <div className="sm:flex justify-between mb-4 mt-4 p-6">
         <input
           type="text"
@@ -81,6 +81,12 @@ function Courses() {
           ))}
         </select>
       </div>
+
+      {courses.length === 0 && (
+        <div className="flex justify-center items-center h-screen">
+          <p>No courses found</p>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 mt-6">
         {courses
@@ -124,7 +130,7 @@ function Courses() {
             </div>
           ))}
       </div>
-      
+
       {loading && (
         <div className="flex justify-center items-center p-16 h-[500px]">
           <Lottie animationData={loadinglottie} className="w-3/12" />
