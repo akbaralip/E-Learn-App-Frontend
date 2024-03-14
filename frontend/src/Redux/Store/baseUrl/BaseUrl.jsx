@@ -1,1 +1,1 @@
-export const  baseUrl = 'https://chefcharisma.akbarali.shop/' ;
+export const  baseUrl = 'https://chefcharisma.akbarali.shop' ;
