@@ -10,8 +10,8 @@ import Navbar from '../../components/Navbar.jsx';
 import { BiSolidInstitution } from 'react-icons/bi'
 import { FaGlobeAsia, FaUserGraduate } from 'react-icons/fa'
 import { PiBookFill } from 'react-icons/pi'
-import chefImage from "../../assets/achievment.jpg"
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 function Home() {
@@ -55,6 +55,8 @@ function Home() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const user = useSelector(state => state.auth);
 
   const fetchData = async () => {
     try {
@@ -119,17 +121,21 @@ function Home() {
             </div>
 
           </div>
-          <Link to="/Signup">
-            <button className='px-9'>
-              <a className=" mt-6 px-12 py-3 relative rounded group overflow-hidden font-medium  bg-[#96f2d3b2] text-black inline-block">
-                <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-[#88b420] group-hover:h-full opacity-90"></span>
-                <span className="relative group-hover:text-white">
-                  Register now
-                </span>
-              </a>
+          {user.username ? (
+            null
+          ) : (
+            <Link to="/Signup">
+              <button className='px-9'>
+                <a className=" mt-6 px-12 py-3 relative rounded group overflow-hidden font-medium  bg-[#96f2d3b2] text-black inline-block">
+                  <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-[#88b420] group-hover:h-full opacity-90"></span>
+                  <span className="relative group-hover:text-white">
+                    Register now
+                  </span>
+                </a>
+              </button>
+            </Link>
+          )}
 
-            </button>
-          </Link>
         </div>
 
       </div>
