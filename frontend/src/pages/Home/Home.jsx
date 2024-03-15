@@ -147,53 +147,41 @@ function Home() {
       </div>
 
 
-      <div className='mani flex py-16 px-10'>
+      <div className='mani flex flex-col lg:flex-row py-16 px-10'>
         <div className='flex flex-col justify-center'>
-          <h1 className='text-3xl py-2 font-semibold '>Our <span className='text-[#20B486]'>Achievements</span></h1>
+          <h1 className='text-3xl py-2 font-semibold'>Our <span className='text-[#20B486]'>Achievements</span></h1>
           <p className='text-gray-500 py-2'>Choose Us for a World of Knowledge and Endless Opportunities in Your Cooking Journey.</p>
-          <div className='grid grid-cols-2 py-1'>
-            <div className=' py-6 flex'>
-              <div className='p-4  rounded-xl bg-[#E9F8F3]'>
-                <FaGlobeAsia
-                  size={30}
-                  style={{ color: '#1A906B' }}
-                />
+          <div className='grid grid-cols-1 lg:grid-cols-2 py-1'>
+            <div className='py-6 flex justify-center items-center'>
+              <div className='p-4 rounded-xl bg-[#E9F8F3]'>
+                <FaGlobeAsia size={30} style={{ color: '#1A906B' }} />
               </div>
               <div className='px-3'>
                 <h1 className='text-2xl font-bold'>10+</h1>
                 <p className='text-[#6D737A]'>Countries</p>
               </div>
             </div>
-            <div className=' py-6 flex'>
-              <div className='p-4  rounded-xl bg-[#FFFAF5]'>
-                <BiSolidInstitution
-                  size={30}
-                  style={{ color: '#FFC27A' }}
-                />
+            <div className='py-6 flex justify-center items-center'>
+              <div className='p-4 rounded-xl bg-[#FFFAF5]'>
+                <BiSolidInstitution size={30} style={{ color: '#FFC27A' }} />
               </div>
               <div className='px-3'>
                 <h1 className='text-2xl font-bold'>100+</h1>
                 <p className='text-[#6D737A]'>Chefs</p>
               </div>
             </div>
-            <div className=' py-6 flex'>
-              <div className='p-4  rounded-xl bg-[#FFEEF0]'>
-                <PiBookFill
-                  size={30}
-                  style={{ color: '#ED4459' }}
-                />
+            <div className='py-6 flex justify-center items-center'>
+              <div className='p-4 rounded-xl bg-[#FFEEF0]'>
+                <PiBookFill size={30} style={{ color: '#ED4459' }} />
               </div>
               <div className='px-3'>
                 <h1 className='text-2xl font-bold'>100+</h1>
                 <p className='text-[#6D737A]'>Courses</p>
               </div>
             </div>
-            <div className=' py-6 flex'>
-              <div className='p-4  rounded-xl bg-[#F0F7FF]'>
-                <FaUserGraduate
-                  size={30}
-                  style={{ color: '#0075FD' }}
-                />
+            <div className='py-6 flex justify-center items-center'>
+              <div className='p-4 rounded-xl bg-[#F0F7FF]'>
+                <FaUserGraduate size={30} style={{ color: '#0075FD' }} />
               </div>
               <div className='px-3'>
                 <h1 className='text-2xl font-bold'>1000+</h1>
@@ -203,9 +191,9 @@ function Home() {
           </div>
         </div>
 
-        <div className='py-4 px-26'>
+        <div className='py-4 px-6 lg:px-28'>
           <iframe
-            width="560"
+            width="100%"
             height="315"
             src="https://www.youtube.com/embed/I_6aMZwf9CU"
             title="YouTube video player"
@@ -214,8 +202,8 @@ function Home() {
             allowFullScreen
           ></iframe>
         </div>
-
       </div>
+
 
 
 
