@@ -141,75 +141,83 @@ function Home() {
       </div>
 
       <div className="px-4 py-6 sm:px-0 ">
-        <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" > 
+        <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" >
           <Card categories={categories} />
         </div>
       </div>
 
 
-
-      <div className='w-full bg-white py-16 px-6'>
-        <div className='md:max-w-[1080px] m-auto grid md:grid-cols-2 max-w-[350px]'>
-          <div className='flex flex-col justify-center   '>
-            <h1 className='text-3xl py-2 font-semibold '>Our <span className='text-[#20B486]'>Achievements</span></h1>
-            <p className='text-gray-500 py-2'>Choose Us for a World of Knowledge and Endless Opportunities in Your Cooking Journey.</p>
-            <div className='grid grid-cols-2 py-16'>
-              <div className=' py-6 flex'>
-                <div className='p-4  rounded-xl bg-[#E9F8F3]'>
-                  <FaGlobeAsia
-                    size={30}
-                    style={{ color: '#1A906B' }}
-                  />
-                </div>
-                <div className='px-3'>
-                  <h1 className='text-2xl font-bold'>10+</h1>
-                  <p className='text-[#6D737A]'>Countries</p>
-                </div>
+      <div className='mani flex py-16 px-10'>
+        <div className='flex flex-col justify-center'>
+          <h1 className='text-3xl py-2 font-semibold '>Our <span className='text-[#20B486]'>Achievements</span></h1>
+          <p className='text-gray-500 py-2'>Choose Us for a World of Knowledge and Endless Opportunities in Your Cooking Journey.</p>
+          <div className='grid grid-cols-2 py-1'>
+            <div className=' py-6 flex'>
+              <div className='p-4  rounded-xl bg-[#E9F8F3]'>
+                <FaGlobeAsia
+                  size={30}
+                  style={{ color: '#1A906B' }}
+                />
               </div>
-              <div className=' py-6 flex'>
-                <div className='p-4  rounded-xl bg-[#FFFAF5]'>
-                  <BiSolidInstitution
-                    size={30}
-                    style={{ color: '#FFC27A' }}
-                  />
-                </div>
-                <div className='px-3'>
-                  <h1 className='text-2xl font-bold'>100+</h1>
-                  <p className='text-[#6D737A]'>Chefs</p>
-                </div>
+              <div className='px-3'>
+                <h1 className='text-2xl font-bold'>10+</h1>
+                <p className='text-[#6D737A]'>Countries</p>
               </div>
-              <div className=' py-6 flex'>
-                <div className='p-4  rounded-xl bg-[#FFEEF0]'>
-                  <PiBookFill
-                    size={30}
-                    style={{ color: '#ED4459' }}
-                  />
-                </div>
-                <div className='px-3'>
-                  <h1 className='text-2xl font-bold'>100+</h1>
-                  <p className='text-[#6D737A]'>Courses</p>
-                </div>
+            </div>
+            <div className=' py-6 flex'>
+              <div className='p-4  rounded-xl bg-[#FFFAF5]'>
+                <BiSolidInstitution
+                  size={30}
+                  style={{ color: '#FFC27A' }}
+                />
               </div>
-              <div className=' py-6 flex'>
-                <div className='p-4  rounded-xl bg-[#F0F7FF]'>
-                  <FaUserGraduate
-                    size={30}
-                    style={{ color: '#0075FD' }}
-                  />
-                </div>
-                <div className='px-3'>
-                  <h1 className='text-2xl font-bold'>1000+</h1>
-                  <p className='text-[#6D737A]'>Students</p>
-                </div>
+              <div className='px-3'>
+                <h1 className='text-2xl font-bold'>100+</h1>
+                <p className='text-[#6D737A]'>Chefs</p>
+              </div>
+            </div>
+            <div className=' py-6 flex'>
+              <div className='p-4  rounded-xl bg-[#FFEEF0]'>
+                <PiBookFill
+                  size={30}
+                  style={{ color: '#ED4459' }}
+                />
+              </div>
+              <div className='px-3'>
+                <h1 className='text-2xl font-bold'>100+</h1>
+                <p className='text-[#6D737A]'>Courses</p>
+              </div>
+            </div>
+            <div className=' py-6 flex'>
+              <div className='p-4  rounded-xl bg-[#F0F7FF]'>
+                <FaUserGraduate
+                  size={30}
+                  style={{ color: '#0075FD' }}
+                />
+              </div>
+              <div className='px-3'>
+                <h1 className='text-2xl font-bold'>1000+</h1>
+                <p className='text-[#6D737A]'>Students</p>
               </div>
             </div>
           </div>
-
-          <img className=' m-auto md:order-last order-first rounded' alt="" src="https://www.heraldtribune.com/gcdn/authoring/2019/06/26/NSHT/ghows-LK-8c18d1ea-2228-1fe7-e053-0100007f4e92-7ed4c5c4.jpeg?width=660&height=440&fit=crop&format=pjpg&auto=webp" />
-
-
         </div>
+
+        <div className='py-4 px-26'>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/I_6aMZwf9CU"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+
       </div>
+
+
 
       <div className="">
         <div className="flex grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ">
