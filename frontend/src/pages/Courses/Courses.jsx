@@ -84,7 +84,7 @@ function Courses() {
 
       {courses.length === 0 && (
         <div className="flex justify-center items-center h-screen">
-          <p>No courses found</p>
+          <p className='text-red-600 text-md'>Oops.. empty</p>
         </div>
       )}
 

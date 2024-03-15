@@ -50,14 +50,7 @@ function Footer() {
                     Media Support
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Brochure Create
-                  </a>
-                </li>
+                
                 
                 <li>
                   <a
@@ -67,14 +60,7 @@ function Footer() {
                     Educational Services
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Projects
-                  </a>
-                </li>
+                
               </ul>
             </div>
             <div>
@@ -98,30 +84,14 @@ function Footer() {
                     Personal
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Wiki
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >
-                    Forum
-                  </a>
-                </li>
+                
+                
               </ul>
             </div>
           </div>
         </div>
         <div className="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">
-          <p className="text-sm text-gray-100">
-            © Copyright 2020 Lorem Inc. All rights reserved.
-          </p>
+          
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a
               href="https://twitter.com/?lang=en"

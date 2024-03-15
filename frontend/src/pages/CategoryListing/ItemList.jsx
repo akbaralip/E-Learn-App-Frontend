@@ -40,8 +40,13 @@ function ItemList() {
     return (
         <>
             <Navbar />
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+
+            <div className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+                {courses.length === 0 && (
+                    <div className="flex justify-center items-center h-screen">
+                        <p className='text-red-600 text-md'>Oops.. empty</p>
+                    </div>
+                )}
                 {courses.map((course) => (
                     <div key={course.id} className="flex flex-col w-full h-full space-y-4 mt-4 mb-5 p-2">
                         <div className="flex flex-col bg-gradient-to-r from-red-200 to-yellow-200 rounded p-4">
@@ -85,8 +90,8 @@ function ItemList() {
                 </div>
             )}
             <Footer />
-            
-            
+
+
         </>
     );
 }
