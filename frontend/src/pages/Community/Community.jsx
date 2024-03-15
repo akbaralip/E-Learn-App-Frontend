@@ -74,7 +74,7 @@ function Community() {
   useEffect(() => {
     const initializeWebSocket = () => {
       if (selectedCourse) {
-        const newSocket = new WebSocket(`wss://akbarali.shop/ws/chat/${selectedCourse}/`);
+        const newSocket = new WebSocket(`wss://chefcharisma.akbarali.shop/ws/chat/${selectedCourse}/`);
         newSocket.onopen = () => {
           console.log('WebSocket connected');
         };
