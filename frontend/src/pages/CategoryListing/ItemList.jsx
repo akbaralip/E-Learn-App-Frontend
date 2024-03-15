@@ -33,7 +33,7 @@ function ItemList() {
         <>
             <Navbar />
 
-            <div className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 mt-6">
                 {courses.length === 0 && (
                     <div className="flex justify-center items-center h-screen">
                         <p className='text-red-600 text-md'>Oops.. empty</p>
@@ -53,11 +53,20 @@ function ItemList() {
                                         className="object-cover w-full h-full"
                                     />
                                 </div>
-                                <div className=" mt-4 overflow-y-auto">
+                                <div className=" mt-4 overflow-y-auto h-20">
                                     <p className="mt-4 mb-3 text-blue-800 font-bold">Description:</p>
-                                    <p>{course.description}</p>
+                                    {course.description.length > 10 ? (
+                                        <>
+                                            <p>{course.description.substring(0, 100)}...</p>
+                                            <Link to={`/show_details/${course.id}`}>
+                                                <p className="text-blue-500 cursor-pointer">More</p>
+                                            </Link>
+                                        </>
+                                    ) : (
+                                        <p>{course.description}</p>
+                                    )}
                                 </div>
-                                
+
                             </div>
                         </Link>
 

@@ -99,17 +99,23 @@ function Courses() {
                       className="object-cover w-full h-full"
                     />
                   </div>
-                  <div className=''>
-                    <div className=" mt-4 overflow-y-auto">
-                      <p className="mt-4 mb-3 text-blue-800 font-bold">Description:</p>
+                  <div className='mt-4 overflow-y-auto h-20'> 
+                    <p className="mt-4 mb-3 text-blue-800 font-bold">Description:</p>
+                    {course.description.length > 10 ? ( 
+                      <>
+                        <p>{course.description.substring(0, 100)}...</p> 
+                        <Link to={`/show_details/${course.id}`}> 
+                          <p className="text-blue-500 cursor-pointer">More</p>
+                        </Link>
+                      </>
+                    ) : (
                       <p>{course.description}</p>
-                    </div>
-
+                    )}
                   </div>
                 </div>
               </Link>
-
             </div>
+
           ))}
       </div>
 

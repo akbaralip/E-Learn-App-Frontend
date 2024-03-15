@@ -44,7 +44,7 @@ function ChefCoursesList() {
                     </div>
                 )}
                 {chefCourses.map((course) => (
-                    <div key={course.id} className="flex flex-col max-w-md max-h-96 space-y-4 mt-4 mb-5 p-2">
+                    <div key={course.id} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 mt-6 py-3 px-3">
                         <Link to={`/show_details/${course.id}`}>
                             <div className="flex flex-col bg-gradient-to-r from-red-200 to-yellow-200 rounded p-4 h-full">
                                 <div className='text-gray-700 mb-3'>
@@ -57,9 +57,20 @@ function ChefCoursesList() {
                                         className="object-cover w-full h-full"
                                     />
                                 </div>
-                                <div className=" mt-4 overflow-y-auto">
+                                <div className=" mt-4 overflow-y-auto h-20">
                                     <p className="mt-4 mb-3 text-blue-800 font-bold">Description:</p>
-                                    <p>{course.description}</p>
+                                    {course.description.length > 10 ? (
+                                        <>
+                                            <p>{course.description.substring(0, 100)}...</p>
+                                            <Link to={`/show_details/${course.id}`}>
+                                                <p className="text-blue-500 cursor-pointer">More</p>
+                                            </Link>
+                                        </>
+                                    ):(
+                                        <p>{course.description}</p>
+                                    )}
+
+
                                 </div>
                             </div>
                         </Link>
