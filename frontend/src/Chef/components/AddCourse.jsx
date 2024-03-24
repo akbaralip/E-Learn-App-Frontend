@@ -182,7 +182,7 @@ function AddCourse() {
             <div className="md:w-[90%] lg:w-[80%] xl:w-[900px] h-[130px] overflow-hidden border p-4 md:p-8 shadow-2xl rounded-3xl flex items-center justify-center">
 
               <Button onClick={buttnClick} variant="gradient" className="rounded-full bg-sky-600">
-                {buttonClicked ? 'CLOSE FORM' : 'FILL THE FORM NOW'}
+                {buttonClicked ? 'CLOSE FORM' : 'CLICK AND FILL THE FORM'}
               </Button>
 
               <img src={video_create} alt="" className='mb-4' style={{ height: '140px' }} />

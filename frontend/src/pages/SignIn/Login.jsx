@@ -17,15 +17,42 @@ function Login() {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  
   const testLogin = async (e) =>{
     e.preventDefault();
     let tempUsername = 'Akbar';
     let tempPass = 123456;
     try {
       const response = await axiosInstance.post('api/token/', {
-        tempUsername,
-        tempPass
+        username:tempUsername,
+        password:tempPass
+      });
+      if (response.status === 200) {
+        const data = response.data;
+        localStorage.setItem('access_token', data.access);
+        localStorage.setItem('refresh_token', data.refresh);
+        localStorage.setItem('role', data.role);
+        localStorage.setItem('user_id', data.user_id);
+  
+        dispatch(setUser({ username: response.data.username }));
+        dispatch(setUserRole({ role: response.data.role }));
+        dispatch(setUserImage({ user_image: response.data.image_url }));
+  
+        navigate('/');
+      }
+    } catch (error) {
+      toast.error('Invalid user !');
+    }
+  };
+
+  const testChefLogin = async (e) =>{
+    e.preventDefault();
+    let tempUsername = 'AkbarAli';
+    let tempPass = 123456;
+    try {
+      const response = await axiosInstance.post('api/token/', {
+        username:tempUsername,
+        password:tempPass
       });
       if (response.status === 200) {
         const data = response.data;
@@ -182,6 +209,12 @@ function Login() {
                         className=" mt-4 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-black to-black"
                       >
                         Test User - Sign in
+                      </button>
+                      <button
+                        onClick={testChefLogin}
+                        className=" mt-4 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-blue-400 to-black"
+                      >
+                        Test Chef - Sign in
                       </button>
                       {error && (
                         <div className="text-red-600 text-center">
