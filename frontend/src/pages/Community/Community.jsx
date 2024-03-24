@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import { useSelector } from 'react-redux';
 import { VscAccount } from 'react-icons/vsc';
-import Footer from '../../components/Footer';
 import Modal from "react-modal";
 Modal.setAppElement('#root');
 import './Chat.css';
@@ -74,7 +73,7 @@ function Community() {
   useEffect(() => {
     const initializeWebSocket = () => {
       if (selectedCourse) {
-        const newSocket = new WebSocket(`wss://chefcharisma.akbarali.shop/ws/chat/${selectedCourse}/`);
+        const newSocket = new WebSocket(`ws://chefcharisma.akbarali.shop/ws/chat/${selectedCourse}/`);
         newSocket.onopen = () => {
           console.log('WebSocket connected');
         };

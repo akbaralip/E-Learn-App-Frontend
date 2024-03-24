@@ -18,6 +18,34 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const testLogin = async (e) =>{
+    e.preventDefault();
+    let tempUsername = 'Akbar';
+    let tempPass = '123456';
+    try {
+      const response = await axiosInstance.post('api/token/', {
+        tempUsername,
+        tempPass
+      });
+      if (response.status === 200) {
+        const data = response.data;
+        localStorage.setItem('access_token', data.access);
+        localStorage.setItem('refresh_token', data.refresh);
+        localStorage.setItem('role', data.role);
+        localStorage.setItem('user_id', data.user_id);
+  
+        dispatch(setUser({ username: response.data.username }));
+        dispatch(setUserRole({ role: response.data.role }));
+        dispatch(setUserImage({ user_image: response.data.image_url }));
+  
+        navigate('/');
+      }
+    } catch (error) {
+      toast.error('Invalid user !');
+    }
+  };
+  
+
   const submit = async (e) => {
     e.preventDefault();
 
@@ -100,7 +128,7 @@ function Login() {
                   </svg>
                 </a>
               </div>
-              <div className="w-full max-w-xl xl:px-8 xl:w-5/12 opacity-80">
+              <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10 mt-4">
                   <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                     Sign in
@@ -147,6 +175,13 @@ function Login() {
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-green-400 to-yellow-400"
                       >
                         Sign in
+                      </button>
+                      
+                      <button
+                        onClick={testLogin}
+                        className=" mt-4 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-black to-black"
+                      >
+                        Test User - Sign in
                       </button>
                       {error && (
                         <div className="text-red-600 text-center">
