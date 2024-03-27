@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../../components/Footer';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
-import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Lottie from 'lottie-react';
@@ -94,8 +93,8 @@ function Courses() {
                   </div>
                   <div className="relative overflow-hidden rounded h-40">
                     <img
-                      src={baseUrl + (course.cover_image || 'default-image.jpg')}
-                      alt=""
+                      src={(course.cover_image || 'default-image.jpg')}
+                      alt="image"
                       className="object-cover w-full h-full"
                     />
                   </div>

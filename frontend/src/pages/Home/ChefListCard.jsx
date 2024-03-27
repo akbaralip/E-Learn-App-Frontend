@@ -6,7 +6,6 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import { baseUrl } from "../../Redux/Store/baseUrl/BaseUrl";
 import "./Card.css";
 import { Link } from "react-router-dom";
 
@@ -28,7 +27,7 @@ function ChefListCard({ chefs }) {
                 <CardMedia
                   className="custom-media"
                   component="img"
-                  image={`${baseUrl}${chef.image_url}`}
+                  image={chef.image_url}
                   alt="Chef Image"
                 />
                 <CardContent>

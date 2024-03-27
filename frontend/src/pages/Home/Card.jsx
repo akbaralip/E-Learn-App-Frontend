@@ -6,7 +6,6 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { baseUrl } from "../../Redux/Store/baseUrl/BaseUrl";
 import './Card.css';
 import ItemList from "../CategoryListing/ItemList";
 import { Link } from "react-router-dom";

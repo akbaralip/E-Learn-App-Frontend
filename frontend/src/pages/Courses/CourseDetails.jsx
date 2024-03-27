@@ -85,7 +85,7 @@ function CourseDetails() {
                   {course.instructor.image && (
                     <img
                       className="rounded mb-4"
-                      src={`${baseUrl}${course.instructor.image}`}
+                      src={course.instructor.image}
                       alt={`Profile for ${course.instructor.username}`}
                       style={{ width: '80px', height: '80px', objectFit: 'cover' }}
                     />
@@ -101,7 +101,7 @@ function CourseDetails() {
             <div className="w-full md:w-2/3 relative p-2">
               <div className="rounded bg-gradient-to-r from-red-200 to-yellow-200 p-4 mb-4 mt-8 shadow-lg">
                 <ReactPlayer
-                  url={`${baseUrl}${course.demo_video}`}
+                  url={course.demo_video}
                   controls
                   width='100%'
                   height='100%'
