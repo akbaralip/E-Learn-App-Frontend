@@ -32,7 +32,7 @@ function Card({ categories }) {
                 <CardMedia
                   className="custom-media"
                   component="img"
-                  image={`${baseUrl}${category.category_image}`}
+                  image={category.category_image}
                   alt="Category Image"
                 />
                 <CardContent>
