@@ -14,7 +14,7 @@ function ChefCard({ course }) {
     return null;
   }
 
-  const coverImage = course.cover_image ? `${baseUrl}${course.cover_image}` : '';
+  const coverImage = course.cover_image;
 
   const cardContainerStyle = {
     width: '300px',

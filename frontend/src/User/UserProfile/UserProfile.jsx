@@ -5,7 +5,6 @@ import Modal from "react-modal";
 import toast, { Toaster } from 'react-hot-toast';
 Modal.setAppElement('#root');
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
-import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import Lottie from 'lottie-react';
 import loadinglottie from '../../components/Animations/Loading.json';
 import { setUser, setUserImage } from '../../Redux/Reducer/Reducer';
@@ -317,7 +316,7 @@ function UserProfile() {
                             <div className="w-48 h-48 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500">
                                 {userimage ? (
                                     <img
-                                        src={`${baseUrl}${userimage}`}
+                                        src={userimage}
                                         alt="Profile"
                                         className="w-48 h-48 mx-auto rounded-full shadow-2xl object-cover"
                                     />

@@ -159,7 +159,7 @@ function Community() {
                 className={`flex items-center mb-2 rounded border p-2 cursor-pointer ${selectedCourse === course.course.title ? 'bg-blue-100' : ''}`}
                 onClick={() => handleCourseClick(course.course.title)}
               >
-                <img src={`${baseUrl}${course.course.cover_image}`} alt={`${course.course.title} cover`} className="w-8 h-8 rounded-full mr-2" />
+                <img src={course.course.cover_image} alt={`${course.course.title} cover`} className="w-8 h-8 rounded-full mr-2" />
                 {course.course.title}
               </li>
             ))}

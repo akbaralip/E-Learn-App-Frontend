@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-import { FaArrowUp, FaArrowDown } from "react-icons/fa";
-import { Button } from "@material-tailwind/react";
 import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import Footer from '../../components/Footer';
@@ -52,7 +50,7 @@ function ChefCoursesList() {
                                 </div>
                                 <div className="relative overflow-hidden rounded h-40">
                                     <img
-                                        src={baseUrl + (course.cover_image || 'default-image.jpg')}
+                                        src={(course.cover_image || 'default-image.jpg')}
                                         alt=""
                                         className="object-cover w-full h-full"
                                     />

@@ -239,7 +239,7 @@ function ShowCourses() {
               {videos.map((video) => (
                 <div key={video.id} className="rounded bg-gradient-to-r from-purple-100 to-green-100 p-4 mb-4">
                   <ReactPlayer
-                    url={`${baseUrl}${video.videos}`}
+                    url={video.videos}
                     controls
                     width='100%'
                     height='100%'
@@ -272,7 +272,7 @@ function ShowCourses() {
                 {courses.map((course) => (
                   <div key={course.id}>
                     <ReactPlayer
-                      url={`${baseUrl}${course.demo_video}`}
+                      url={course.demo_video}
                       controls
                       width='100%'
                       height='100%'

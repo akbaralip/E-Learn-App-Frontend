@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
 import { Dropdown } from 'flowbite-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,8 +6,6 @@ import { remove } from '../Redux/Reducer/Reducer';
 import { Toaster } from 'react-hot-toast';
 import { Avatar } from "@material-tailwind/react";
 import { baseUrl } from "../Redux/Store/baseUrl/BaseUrl";
-import { IconButton } from "@material-tailwind/react";
-// import iconPng from "../assets/Icon.png"
 
 
 function Navbar() {
@@ -81,7 +78,7 @@ function Navbar() {
               label={
                 <div className="flex items-center">
                   {user_image ? (
-                    <Avatar src={`${baseUrl}${user_image}`} alt="user" />
+                    <Avatar src={user_image} alt="user" />
                   ) : (
                     <Avatar src="https://th.bing.com/th/id/OIP.GjhRBLXDrrS84RRTEguk8AHaHa?pid=ImgDet&w=192&h=192&c=7&dpr=1.5" alt="user" />
                   )}

@@ -3,7 +3,6 @@ import Footer from '../../components/Footer';
 import ReactPlayer from 'react-player';
 import { useParams } from 'react-router-dom';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
-import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import { ImPlay } from 'react-icons/im';
 import Navbar from '../../components/Navbar';
 import Lottie from 'lottie-react';
@@ -52,7 +51,7 @@ function PurchasedCourse() {
           {courseVideos.map((chapter) => (
             <div key={chapter.id} className="flex-1 md:w-2/3 mb-24 text-white text-right pr-4 rounded  " style={{ display: selectedChapter === chapter.id ? 'block' : 'none' }}>
               <ReactPlayer
-                url={`${baseUrl}${chapter.videos}`}
+                url={chapter.videos}
                 controls
                 width='100%'
                 height='100%'

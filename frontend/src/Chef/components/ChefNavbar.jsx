@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { remove } from '../../Redux/Reducer/Reducer/'
 import toast, { Toaster } from 'react-hot-toast';
 import { Avatar } from "@material-tailwind/react";
-import { baseUrl } from "../../Redux/Store/baseUrl/BaseUrl";
 
 function ChefNavbar() {
     const token = localStorage.getItem('access_token');
@@ -80,7 +79,7 @@ function ChefNavbar() {
                                 label={
                                     <div className="flex items-center">
                                         {userimage ? (
-                                            <Avatar src={`${baseUrl}${userimage}`} alt="avatar" />
+                                            <Avatar src={userimage} alt="avatar" />
                                         ) : (
                                             <Avatar src="https://th.bing.com/th/id/OIP.GjhRBLXDrrS84RRTEguk8AHaHa?pid=ImgDet&w=192&h=192&c=7&dpr=1.5" alt="user" />
                                         )}

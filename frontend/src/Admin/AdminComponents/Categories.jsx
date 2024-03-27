@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import AdminNav from '../AdminNav/AdminNav';
-import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import ChefFooter from '../../Chef/components/ChefFooter';
 import Modal from "react-modal";
 import toast, { Toaster } from 'react-hot-toast';
@@ -173,7 +172,7 @@ function Categories() {
                 <td style={{ padding: '8px' }}>{category.category}</td>
                 <td style={{ padding: '8px' }}>
                   <img
-                    src={`${baseUrl}${category.category_image}`}
+                    src={category.category_image}
                     alt={category.category}
                     style={{
                       maxWidth: '100px',

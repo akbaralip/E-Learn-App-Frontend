@@ -80,7 +80,7 @@ function ChefUnListedCourses() {
 
               <div className="relative overflow-hidden rounded h-40">
                 <img
-                  src={baseUrl + (course.cover_image || '')}
+                  src={(course.cover_image || '')}
                   alt=""
                   className="object-cover w-full h-full"
                 />

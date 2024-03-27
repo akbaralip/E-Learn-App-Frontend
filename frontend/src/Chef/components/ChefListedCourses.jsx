@@ -1,8 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
-import ReactPlayer from 'react-player';
-import { baseUrl } from '../../Redux/Store/baseUrl/BaseUrl';
 import ChefNavbar from './ChefNavbar';
 import ChefFooter from './ChefFooter';
 import { Button } from "@material-tailwind/react";
@@ -78,7 +76,7 @@ function ChefListedCourses() {
                         <div key={course.id} className="flex flex-col bg-gradient-to-r from-blue-100 to-green-200 rounded p-4">
                             <div className="relative overflow-hidden rounded h-40">
                                 <img
-                                    src={baseUrl + (course.cover_image || 'default-image.jpg')}
+                                    src={(course.cover_image || 'default-image.jpg')}
                                     alt=""
                                     className="object-cover w-full h-full"
                                 />
