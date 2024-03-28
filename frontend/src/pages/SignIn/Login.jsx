@@ -20,7 +20,7 @@ function Login() {
   
   const testLogin = async (e) =>{
     e.preventDefault();
-    let tempUsername = 'Akbar';
+    let tempUsername = 'Finu';
     let tempPass = 123456;
     try {
       const response = await axiosInstance.post('api/token/', {
