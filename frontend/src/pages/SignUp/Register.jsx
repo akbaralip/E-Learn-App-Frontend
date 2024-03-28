@@ -4,18 +4,20 @@ import axiosInstance from '../../AxiosInstance/AxiosIntercepter';
 import OtpVerification from '../Otp_Verification/OtpVerification';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
-import Lottie from 'lottie-react';
-import loadinglottie from '../../components/Animations/Loading.json'
 import Navbar from '../../components/Navbar';
 import registerPic from "../../assets/login_pic.jpg"
+import { Oval } from 'react-loader-spinner'
+
 
 function Register() {
   const [phoneError, setPhoneError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [usernameError, setUsernameError] = useState('');
   const [passError, setPassError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [Error, setError] = useState('')
+  const [otpSend, setOtpSend] = useState(false);
+  const [isChef, setIsChef] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const [editFormData, setEditFormData] = useState({
     username: '',
@@ -23,9 +25,6 @@ function Register() {
     phone: '',
     password: '',
   });
-
-  const [otpSend, setOtpSend] = useState(false);
-  const [isChef, setIsChef] = useState(false);
 
   const handleEditInputChange = (e) => {
     const { name, value } = e.target;
@@ -51,7 +50,7 @@ function Register() {
     }
     else if (/\s/.test(value)) {
       setUsernameError('Username should not contain spaces.');
-    }else {
+    } else {
       setUsernameError('');
     }
   };
@@ -83,7 +82,7 @@ function Register() {
       setPassError('');
     }
   };
-  
+
 
   const submit = async (e) => {
     e.preventDefault();
@@ -105,34 +104,25 @@ function Register() {
         phone: editFormData.phone,
         is_chef: isChef,
       };
-      console.log('userData===>>', userData)
-      setIsLoading(true)
-      const response = await axiosInstance.post('api/register/', userData);
 
+      setLoading(true)
+      const response = await axiosInstance.post('api/register/', userData);
       if (response.status === 200) {
-        setIsLoading(false)
         setOtpSend(true);
       }
     } catch (error) {
-      setIsLoading(false)
       if (error.response?.status === 400) {
-        setIsLoading(false)
         setError(error.response.data.message);
       } else {
-        setIsLoading(false)
         toast.error('An error occurred during registration.');
       }
+    } finally {
+      setLoading(false)
     }
 
   };
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center  p-16 h-[500px]">
-        <Lottie animationData={loadinglottie} className="w-1/6" />
-      </div>
-    );
-  }
+
 
   return (
     <>
@@ -176,7 +166,7 @@ function Register() {
                       aria-label=""
                       className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
                     >
-                   
+
                       <svg
                         className="inline-block w-3 ml-2"
                         fill="currentColor"
@@ -285,7 +275,19 @@ function Register() {
                             type="submit"
                             className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-green-400 to-yellow-300"
                           >
-                            Sign up
+                            {loading ? (
+                              <Oval
+                                visible={true}
+                                height="30"
+                                width="80"
+                                color="#f5f5f5"
+                                ariaLabel="oval-loading"
+                                wrapperStyle={{ display: 'inline-block', marginRight: '10px' }}
+                              />
+                            ) : (
+                              'Sign up'
+                            )}
+
                           </button>
                         </div>
                         <p className="text-xs text-gray-600 sm:text-sm">

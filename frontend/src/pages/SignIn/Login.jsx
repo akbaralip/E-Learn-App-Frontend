@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,7 +8,7 @@ import Modal from '../../components/Modal';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import loginPic from "../../assets/register_pic.jpg"
-
+import { Oval } from 'react-loader-spinner'
 function Login() {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
@@ -17,15 +16,19 @@ function Login() {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  
-  const testLogin = async (e) =>{
+  const [loading, setLoading] = useState(false)
+  const [userLoading, setUserLoading] = useState(false)
+  const [ChefLoading, setChefLoading] = useState(false)
+
+  const testLogin = async (e) => {
     e.preventDefault();
     let tempUsername = 'Finu';
     let tempPass = 123456;
     try {
+      setUserLoading(true)
       const response = await axiosInstance.post('api/token/', {
-        username:tempUsername,
-        password:tempPass
+        username: tempUsername,
+        password: tempPass
       });
       if (response.status === 200) {
         const data = response.data;
@@ -33,26 +36,30 @@ function Login() {
         localStorage.setItem('refresh_token', data.refresh);
         localStorage.setItem('role', data.role);
         localStorage.setItem('user_id', data.user_id);
-  
+
         dispatch(setUser({ username: response.data.username }));
         dispatch(setUserRole({ role: response.data.role }));
         dispatch(setUserImage({ user_image: response.data.image_url }));
-  
+
         navigate('/');
       }
     } catch (error) {
       toast.error('Invalid user !');
     }
+    finally {
+      setUserLoading(false)
+    }
   };
 
-  const testChefLogin = async (e) =>{
+  const testChefLogin = async (e) => {
     e.preventDefault();
     let tempUsername = 'AkbarAli';
     let tempPass = 123456;
     try {
+      setChefLoading(true)
       const response = await axiosInstance.post('api/token/', {
-        username:tempUsername,
-        password:tempPass
+        username: tempUsername,
+        password: tempPass
       });
       if (response.status === 200) {
         const data = response.data;
@@ -60,18 +67,21 @@ function Login() {
         localStorage.setItem('refresh_token', data.refresh);
         localStorage.setItem('role', data.role);
         localStorage.setItem('user_id', data.user_id);
-  
+
         dispatch(setUser({ username: response.data.username }));
         dispatch(setUserRole({ role: response.data.role }));
         dispatch(setUserImage({ user_image: response.data.image_url }));
-  
+
         navigate('/');
       }
     } catch (error) {
       toast.error('Invalid user !');
     }
+    finally {
+      setChefLoading(false)
+    }
   };
-  
+
 
   const submit = async (e) => {
     e.preventDefault();
@@ -82,6 +92,7 @@ function Login() {
     }
 
     try {
+      setLoading(true);
       const response = await axiosInstance.post('api/token/', {
         username,
         password,
@@ -104,6 +115,9 @@ function Login() {
     } catch (error) {
       toast.error('Invalid user !')
     }
+    finally {
+      setLoading(false)
+    }
   };
 
   return (
@@ -117,6 +131,8 @@ function Login() {
           className="absolute inset-0 object-cover w-full h-full"
           alt=""
         />
+
+
 
         <div className="relative bg-opacity-75 bg-deep-purple-accent-700 ">
           <svg
@@ -136,16 +152,16 @@ function Login() {
                   jumps over a bright future
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
-                You can now register your chef charisma into your account.
-                Sign up, add your course to your collection and enjoy the full chef charisma Experience.
-                
+                  You can now register your chef charisma into your account.
+                  Sign up, add your course to your collection and enjoy the full chef charisma Experience.
+
                 </p>
                 <a
                   href="/"
                   aria-label=""
                   className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
                 >
-                 
+
                   <svg
                     className="inline-block w-3 ml-2"
                     fill="currentColor"
@@ -200,21 +216,57 @@ function Login() {
                       <button
                         type="submit"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-green-400 to-yellow-400"
+                        disabled={loading}
                       >
-                        Sign in
+                        {loading ? (
+                          <Oval
+                            visible={true}
+                            height="30"
+                            width="80"
+                            color="#f5f5f5"
+                            ariaLabel="oval-loading"
+                            wrapperStyle={{ display: 'inline-block', marginRight: '10px' }}
+                          />
+                        ) : (
+                          'Sign in'
+                        )}
                       </button>
-                      
+
                       <button
                         onClick={testLogin}
                         className=" mt-4 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-black to-black"
                       >
-                        Test User - Sign in
+                        {userLoading ? (
+                          <Oval
+                            visible={true}
+                            height="30"
+                            width="80"
+                            color="#f5f5f5"
+                            ariaLabel="oval-loading"
+                            wrapperStyle={{ display: 'inline-block', marginRight: '10px' }}
+                          />
+                        ) : (
+                          'Test User - Sign in'
+                        )}
+
                       </button>
                       <button
                         onClick={testChefLogin}
                         className=" mt-4 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bg-gradient-to-r from-blue-400 to-black"
                       >
-                        Test Chef - Sign in
+                        {ChefLoading ? (
+                          <Oval
+                            visible={true}
+                            height="30"
+                            width="80"
+                            color="#f5f5f5"
+                            ariaLabel="oval-loading"
+                            wrapperStyle={{ display: 'inline-block', marginRight: '10px' }}
+                          />
+                        ) : (
+                          'Test Chef - Sign in'
+                        )}
+
                       </button>
                       {error && (
                         <div className="text-red-600 text-center">
