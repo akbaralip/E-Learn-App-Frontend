@@ -115,6 +115,7 @@ function Register() {
         setError(error.response.data.message);
       } else {
         toast.error('An error occurred during registration.');
+        console.log("error",error, error.response.data.message)
       }
     } finally {
       setLoading(false)
