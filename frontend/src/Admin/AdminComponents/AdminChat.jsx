@@ -116,7 +116,7 @@ function AdminChat() {
                                 onClick={() => handleChefSelection(chef)}
                             >
                                 <img
-                                    src={`${baseUrl}${chef.image}`}
+                                    src={chef.image}
                                     alt={`${chef.username} avatar`}
                                     className="w-8 h-8 rounded-full mr-2"
                                 />

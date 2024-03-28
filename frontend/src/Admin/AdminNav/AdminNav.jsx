@@ -64,10 +64,6 @@ function AdminNav() {
               <Link to='/admin_chat_port' className="relative px-3 py-2 rounded-md text-green-500  after:content-[''] after:block after:h-1 after:w-full after:bg-red-600 after:absolute after:bottom-0 after:left-0 after:transform after:scale-x-0 after:transition-transform after:ease-in-out after:hover:scale-x-100">
                 CHAT
               </Link>
-
-              <Link to='#' className="relative px-3 py-2 rounded-md text-green-500  after:content-[''] after:block after:h-1 after:w-full after:bg-red-600 after:absolute after:bottom-0 after:left-0 after:transform after:scale-x-0 after:transition-transform after:ease-in-out after:hover:scale-x-100">
-                ABOUT
-              </Link>
             </div>
 
             {user && token ? (
